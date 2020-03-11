@@ -7,19 +7,22 @@ puts "Hello comrade! What ammo do you need information for? Shotgun, rifle or pi
 #program will need to return a confirmation of user selection. 
    
 if ammo_section == "shotgun"
-    puts "Nothing takes down scavs or PMC's like shotguns! Which ammo type?"
+    puts "Nothing takes down scavs or PMC's like shotguns! Which ammo type? are you looking for 12 gauge or 20 gauge?"
     elsif
     ammo_section == "rifle"
-    puts "So you want to reach out and touch your enemies? Which ammo type?"
+    puts "So you want to reach out and touch your enemies? Which caliber?"
     elsif
     ammo_section == "pistol"
     puts "Oh, hello again Mr. Wick! What pistol munitions are you interested in?"
+    elsif 
+    ammo_section == "assault rifle"
+    puts "Mid range mastery is it? What caliber?"
+    elsif 
+    ammo_section == "sub machine gun"
+    puts "Sprayin' and prayin', what caliber?"
     else 
     puts "Invalid ammo selection please select from Shotgun, Rifle or Pistol"
 end
-
-
-
 
 #user will then need to input the caliber of selected munitions 
 #program will return a selection of ammo types from the selected caliber
