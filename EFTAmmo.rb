@@ -1,11 +1,12 @@
+require "./NFAM_data.rb"
+
 #program needs to prompt user for which ammo type they need info for.
 puts "Hello comrade! What ammo do you need information for? Shotgun, rifle or pistol?"
     #program will need to take a user input 
     ammo_section = gets.chomp.to_s.downcase 
     #first level of user input determines what type of ammo the user wants to investigate 
     #i.e Shotgun, Rifle or Pistol ammo types
-#program will need to return a confirmation of user selection. 
-   
+#program will need to return a confirmation of user selection.   
 if ammo_section == "shotgun"
     puts "Nothing takes down scavs or PMC's like shotguns! Which ammo type? are you looking for 12 gauge or 20 gauge?"
     elsif

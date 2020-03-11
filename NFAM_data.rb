@@ -88,7 +88,7 @@ cal_9x21mm = {
 }
 
 #Sub machine gun rounds 
-
+sub_m_g = {
 cal_57x28mm = {	
     "r37f" => [98, 8, 7],																
     "ss198lf" => [74, 10, 15],																
@@ -113,7 +113,7 @@ cal_46x30mm = {
     "SPP" => [67, 45, 56],															
     "BP" => [60, 50, 68]															
 }
-
+}
 #assault rifle rounds 
 
 cal_545x39mm = {	
@@ -188,3 +188,5 @@ cal_127x55mm = {
     "ps12" => [115, 28, 60],														
     "ps12b" => [102, 46, 57]
 }	
+
+
