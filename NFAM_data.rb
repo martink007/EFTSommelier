@@ -7,14 +7,14 @@ Ammo Type		Damage     Pen Value   Armor Damage
 
 shot_12_gauge = {	
     "5.25mm Buckshot" => [34, 1, 15],
-    "8.5mm Buckshot Magnum" =>	[44, 2, 26],
+    "8.5mm Buckshot Magnum" => [44, 2, 26],
     "6.5mm Buckshot Express" => [29, 3, 26],																
     "7mm Buckshot" => [32, 3, 26],															
     "Flechette" => [19, 28, 26]			
 }
 
 slugs_12_Gauge = {	
-    "RIP Slug" =>	[235, 0, 11],			
+    "RIP Slug" => [235, 0, 11],			
     "Superformance HP Slug" => [190, 2, 12],		
     "Grizzly 40 Slug" => [170, 12, 48],															
     "HP Copper Sabot Premier" => [160, 13, 46],																
