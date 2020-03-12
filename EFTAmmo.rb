@@ -1,7 +1,8 @@
 require "cli/ui"
-require "terminal-table" 
+require "pastel"
 require 'colorize'
 require "colorized_string"
+require "tty-font"
 require_relative './NFAM_data.rb'
 #program pulls info from hash table with different damage, armour damage armour penetration and armor classes levels
 #main data objects are stored in another file ./NFAM_data.rb
@@ -11,6 +12,12 @@ system("clear")
 #terminal will clear everytime program is run
 #user is prompted to select a firearm type from the menu.
 #first selection chooses what type of firearm the user is looking for 
+font = TTY::Font.new(:doom)
+pastel = Pastel.new
+
+    puts pastel.green(font.write("Escape from Tarkov:Sommelier"))
+continue = "Yes"
+while continue == "Yes"
     fire_arm_selection = CLI::UI::Prompt.ask('Hello comrade! What ammo do you need information for? Shotgun, rifle, assault rifle, Sub Machine Gun or pistol?') do |handler|
         handler.option('Shotgun')  { |selection| selection }
         handler.option('Rifle')     { |selection| selection }
@@ -50,9 +57,13 @@ end
 #i need a while loop here
 #if statement defining arguments and where in the data object the data will be retrieved.
 if fire_arm_selection == "shotgun"
+    # Assign SHOTGUN_AMMO to gun_key to make the following functions more flexible
     gun_key = SHOTGUN_AMMO
+    # The function to recieve calib. Needs a string and they gun_key
     cal = cal_level_selection("Nothing takes down scavs or PMC's like shotguns! Which ammo type? are you looking for 12 gauge or 20 gauge?", gun_key)
+    # The function to recieve calib. Needs the firearm weapon types
     type = cal_type_selection(gun_key[cal])
+    # This functin provides the information regarding the selected amo type
     cal_type_information(gun_key[cal][type])
     elsif fire_arm_selection == "rifle"
         gun_key = RIFLE_AMMO
@@ -77,11 +88,15 @@ if fire_arm_selection == "shotgun"
     else 
         puts "Invalid ammo selection please select from Shotgun, Rifle, Assault rifle, Sub Machine Gun or Pistol"
 end
+# this function returns user to home or exit.
+continue = CLI::UI::Prompt.ask("Would you like to know more?") do |handler|
+         handler.option("Yes")  { |selection| selection }
+        handler.option("No")  { |selection| selection }
+end
+end
 
-#user is then prompted to either return one level up back to type or 2 levels back to caliber or back to starting point.
-    #on second though this may be too complicated and will need to be added in version 1.0.1
 
-
+    
 
 
 
