@@ -1,5 +1,5 @@
 require "cli/ui"
- 
+require "terminal-table" 
 require 'colorize'
 require "colorized_string"
 require_relative './NFAM_data.rb'
@@ -41,7 +41,10 @@ def cal_type_selection(cal)
 end
 #program outputs the damage, armor penetration and armor damage values for the chosen munitions.
 def cal_type_information(type)
-    puts ColorizedString["Damage: #{type[0]} Pen Value: #{type[1]} Armor Damage: #{type[2]} This ammo will penetrate armour class #{type[3]} and below"].colorize(:green)
+    puts ColorizedString["Damage: #{type[0]}"].colorize(:red) 
+    puts ColorizedString["Pen Value: #{type[1]}"].colorize(:light_blue)
+    puts ColorizedString["Armor Damage: #{type[2]}"].colorize(:light_blue) 
+    puts ColorizedString["This ammo will penetrate armour class #{type[3]} and below"].colorize(:green)
 end
 
 #i need a while loop here
@@ -76,7 +79,7 @@ if fire_arm_selection == "shotgun"
 end
 
 #user is then prompted to either return one level up back to type or 2 levels back to caliber or back to starting point.
-
+    #on second though this may be too complicated and will need to be added in version 1.0.1
 
 
 
